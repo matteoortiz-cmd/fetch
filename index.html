@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Leia publicações e participe da conversa no Blog."
+    />
+    <title>Blog — ideias em conversa</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#" aria-label="Blog, início">
+        <span class="brand-mark" aria-hidden="true">b.</span>
+        <span>entrelinhas</span>
+      </a>
+      <span class="header-note">Ideias para ler com calma.</span>
+    </header>
+
+    <main>
+      <section id="listing-view" class="view">
+        <div class="hero">
+          <div class="eyebrow"><span></span> UM ESPAÇO PARA BOAS IDEIAS</div>
+          <h1>Palavras que<br /><em>movem</em> conversas.</h1>
+          <p>Histórias, pensamentos e descobertas — para levar com você.</p>
+        </div>
+
+        <div class="section-heading">
+          <div>
+            <span class="section-kicker">NOSSO CADERNO</span>
+            <h2>Últimas publicações</h2>
+          </div>
+          <span id="post-count" class="post-count"></span>
+        </div>
+        <div id="posts" class="posts-grid" aria-live="polite">
+          <p class="status-message">Carregando publicações<span class="loading-dots">...</span></p>
+        </div>
+      </section>
+
+      <section id="detail-view" class="view detail-view" hidden>
+        <button id="back-button" class="back-button" type="button">
+          <span aria-hidden="true">←</span> Todas as publicações
+        </button>
+        <article id="post-detail" class="post-detail" aria-live="polite"></article>
+        <section class="comments-section" aria-labelledby="comments-title">
+          <div class="comments-heading">
+            <div>
+              <span class="section-kicker">A CONVERSA CONTINUA</span>
+              <h2 id="comments-title">Comentários <span id="comment-count"></span></h2>
+            </div>
+          </div>
+          <div id="comments-list" class="comments-list" aria-live="polite"></div>
+          <form id="comment-form" class="comment-form">
+            <h3>Deixe sua marca</h3>
+            <div class="form-row">
+              <label>
+                Seu nome
+                <input
+                  id="comment-name"
+                  name="name"
+                  type="text"
+                  placeholder="Como podemos chamar você?"
+                  maxlength="80"
+                  required
+                />
+              </label>
+              <label>
+                Seu e-mail
+                <input
+                  id="comment-email"
+                  name="email"
+                  type="email"
+                  placeholder="voce@exemplo.com"
+                  maxlength="120"
+                  required
+                />
+              </label>
+            </div>
+            <label>
+              Comentário
+              <textarea
+                id="comment-body"
+                name="body"
+                rows="4"
+                placeholder="O que você achou desta publicação?"
+                maxlength="1000"
+                required
+              ></textarea>
+            </label>
+            <div class="form-footer">
+              <p id="form-message" class="form-message" role="status"></p>
+              <button id="submit-comment" class="submit-button" type="submit">
+                Publicar comentário <span aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </form>
+        </section>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="brand footer-brand" href="#"><span class="brand-mark">b.</span> entrelinhas</a>
+      <span>Um lugar para ideias encontrarem pessoas.</span>
+    </footer>
+  </body>
+</html>
